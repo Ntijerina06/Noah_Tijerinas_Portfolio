@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Noto Serif', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #24252A;
+}
+
+.line_bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/lines_bg.png");
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    padding: 20px 75px;
+}
+
+.name h1 {
+    font-size: 70px;
+    font-weight: 600;
+    padding-right: 20px;
+    margin: 0;
+}
+
+.Description {
+    color: #edf0f1;
+    font-size: 35px;
+    font-weight: 400;
+    max-width: 1100px;
+}
+
+.about_container {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px;
+}
+
+.about_container .card {
+    width: 450px;
+    height: 420px;
+    background: #2E2F36;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    margin: 20px;
+
+    /* Thinner gradient border */
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+
+    /* Add gradient pseudo-element */
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background: linear-gradient(to right, rebeccapurple, mediumpurple); /* Gradient colors */
+        margin: -2px; /* Matches the size of the outer border */
+    }
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about_container .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.about_description {
+    color: #edf0f1;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.contact {
+    background-color: #2E2F36; /* Match the color theme of the website */
+    color: #edf0f1; /* Text color to match the rest of the site */
+    padding: 40px 20px; /* Add padding for spacing */
+    text-align: center; /* Center-align the text */
+    font-size: 18px; /* Increase font size for readability */
+    border-top: 2px solid mediumpurple; /* Add a top border to distinguish the footer */
+}
+
+.contact a {
+    color: mediumpurple; /* Link color that matches your button gradient */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+.contact-info p {
+    margin: 10px 0; /* Space between each line of contact info */
+}
